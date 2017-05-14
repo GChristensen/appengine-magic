@@ -12,7 +12,7 @@
                  [javax.servlet/servlet-api "2.5"]
                  [commons-io "2.4"]
                  [commons-codec "1.7"]
-                 [commons-fileupload "1.2.2"]
+                 [commons-fileupload "1.3.2"]
                  ;; App Engine administrative interface support
                  [tomcat/jasper-runtime "5.0.28"]
                  [org.apache.geronimo.specs/geronimo-jsp_2.1_spec "1.0.1"]
@@ -23,9 +23,9 @@
                  [com.google.appengine/appengine-api-1.0-sdk "1.7.4"]
                  [com.google.appengine/appengine-api-labs "1.7.4"]
                  [com.google.appengine/appengine-api-stubs "1.7.4"]
-                 [com.google.appengine/appengine-local-runtime "1.7.4"]
-                 [com.google.appengine/appengine-local-runtime-shared "1.7.4"]
+                 [com.google.appengine/appengine-local-runtime "1.7.0"]
+                 [com.google.appengine/appengine-local-runtime-shared "1.7.0"]
                  [com.google.appengine/appengine-testing "1.7.4"]
-                 [com.google.appengine/appengine-tools-api "1.7.4"]
+                 [com.google.appengine/appengine-tools-api "1.7.0"]
                  ;; for the Leiningen plugin
                  [me.raynes/fs "1.4.5"]])
