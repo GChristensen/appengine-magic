@@ -76,7 +76,7 @@
        (AppCfg/main (into-array ["update" (.getCanonicalPath war-dir)]))
        ;; dev_appserver
        (= "appengine-dev-appserver" task-name)
-       (let [cmd (format "%s/bin/dev_appserver.sh %s"
+       (let [cmd (format "%s/bin/dev_appserver.cmd %s"
                          (.getCanonicalPath appengine-sdk)
                          (.getCanonicalPath war-dir))
              cmd-line (CommandLine/parse cmd)
