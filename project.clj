@@ -5,27 +5,29 @@
   :repositories {"releases" "http://appengine-magic-mvn.googlecode.com/svn/releases/"
                  "snapshots" "http://appengine-magic-mvn.googlecode.com/svn/snapshots/"}
   :exclusions [org.clojure/clojure]
-  :dependencies [[org.clojure/clojure "1.4.0"]
-                 [ring/ring-core "1.1.0"]
-                 [org.apache.commons/commons-exec "1.1"]
+  :dependencies [[ring/ring-core "1.7.1"]
+                 ;[ring/ring-jetty-adapter "1.7.1"]
+                 [org.eclipse.jetty/jetty-server "9.4.14.v20181114"]
+                 [org.eclipse.jetty/jetty-servlet "9.4.14.v20181114"]
                  ;; App Engine supporting essentials
-                 [javax.servlet/servlet-api "2.5"]
                  [commons-io "2.4"]
                  [commons-codec "1.7"]
                  [commons-fileupload "1.3.2"]
+                 [org.apache.commons/commons-exec "1.1"]
                  ;; App Engine administrative interface support
-                 [tomcat/jasper-runtime "5.0.28"]
-                 [org.apache.geronimo.specs/geronimo-jsp_2.1_spec "1.0.1"]
-                 [javax.servlet/jstl "1.1.2"] ; repackaged-appengine-jakarta-jstl-1.1.2.jar
-                 [taglibs/standard "1.1.2"] ; repackaged-appengine-jakarta-standard-1.1.2.jar
                  [commons-el "1.0"]
+                 [javax.servlet.jsp/jsp-api "2.1"]
+                 [javax.activation/activation "1.1.1"]
+                 [org.eclipse.jetty/apache-jsp "9.4.14.v20181114"]
+                 [org.apache.taglibs/taglibs-standard-spec "1.2.5"]
+                 [org.apache.taglibs/taglibs-standard-impl "1.2.5"]
                  ;; main App Engine libraries
-                 [com.google.appengine/appengine-api-1.0-sdk "1.7.4"]
-                 [com.google.appengine/appengine-api-labs "1.7.4"]
-                 [com.google.appengine/appengine-api-stubs "1.7.4"]
-                 [com.google.appengine/appengine-local-runtime "1.7.0"]
-                 [com.google.appengine/appengine-local-runtime-shared "1.7.0"]
-                 [com.google.appengine/appengine-testing "1.7.4"]
-                 [com.google.appengine/appengine-tools-api "1.7.0"]
+                 [com.google.appengine/appengine-api-1.0-sdk "1.9.76"]
+                 [com.google.appengine/appengine-api-labs "1.9.76"]
+                 [com.google.appengine/appengine-api-stubs "1.9.76"]
+                 [com.google.appengine/appengine-local-runtime "1.9.76"]
+                 [com.google.appengine/appengine-local-runtime-shared "1.9.76"]
+                 [com.google.appengine/appengine-testing "1.9.76"]
+                 [com.google.appengine/appengine-tools-sdk "1.9.76"]
                  ;; for the Leiningen plugin
                  [me.raynes/fs "1.4.5"]])

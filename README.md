@@ -1,3 +1,25 @@
+## Description
+
+This is a fork of [appengine-magic](https://github.com/gcv/appengine-magic)
+I use to maintain [feedxcavator2](https://github.com/GChristensen/feedxcavator2)
+application.
+
+What has been done:
+- fixed "the strange startup error related to the blob store"
+- fixed the error related to record constructors in the recent clojure versions
+- updated some dependencies
+- more `_ah/admin` pages do not work
+
+Otherwise it is the same appengine-magic as it was N years ago, which does not
+contain any modern Google Cloud APIs.
+
+Installation:
+1. Clone the repo.
+2. Execute `lein install` from the repo directory.
+
+The original README:
+----
+
 The appengine-magic library attempts to abstract away the infrastructural nuts
 and bolts of writing a Clojure application for the Google App Engine platform.
 

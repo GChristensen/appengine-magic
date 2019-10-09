@@ -1,6 +1,7 @@
 (ns appengine-magic.utils
   (:import [java.io File FileInputStream FileWriter InputStream OutputStream]
            java.nio.ByteBuffer
+           java.nio.Buffer
            [java.nio.channels Channel Channels ReadableByteChannel WritableByteChannel]
            org.xml.sax.InputSource
            [javax.xml parsers.DocumentBuilderFactory
@@ -8,6 +9,10 @@
             transform.TransformerFactory transform.dom.DOMSource
             transform.stream.StreamResult]))
 
+(defn select-object-constructor [constructors]
+  (->> (filter #(not (some (fn [t] (not= t Object)) (.getParameterTypes %))) constructors)
+       (sort-by #(- (alength (.getParameterTypes %))))
+       first))
 
 ;;; TODO: In Clojure 1.3, stop using this macro.
 ;;; Adapted from: http://groups.google.com/group/clojure/msg/5206fac13144ea99
@@ -19,7 +24,7 @@
   (let [vals-map (if (= 1 (count args))
                      (first args)
                      (apply hash-map args))]
-    `(let [constructor# (first (.getDeclaredConstructors ~record-type))
+    `(let [constructor# (select-object-constructor (.getDeclaredConstructors ~record-type))
            number-constructor-parameters# (alength (.getParameterTypes constructor#))]
        (merge (.newInstance constructor#
                             (make-array Object number-constructor-parameters#))
@@ -32,11 +37,11 @@
     (let [^ByteBuffer buf (ByteBuffer/allocateDirect (* 4 1024))]
       (loop []
         (when-not (= -1 (.read in-channel buf))
-          (.flip buf)
+          (.flip (cast java.nio.Buffer buf))
           (.write out-channel buf)
           (.compact buf)
           (recur)))
-      (.flip buf)
+      (.flip (cast java.nio.Buffer buf))
       (loop [] ; drain the buffer
         (when (.hasRemaining buf)
           (.write out-channel buf)

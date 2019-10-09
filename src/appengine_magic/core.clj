@@ -1,5 +1,6 @@
 (ns appengine-magic.core
-  (:import com.google.apphosting.api.ApiProxy))
+  (:import com.google.appengine.api.utils.SystemProperty
+           com.google.apphosting.api.ApiProxy))
 
 
 (declare appengine-environment-type)
@@ -14,7 +15,7 @@
 
 
 (defn appengine-environment-type []
-  (let [env-property (System/getProperty "com.google.appengine.runtime.environment")]
+  (let [env-property (.get SystemProperty/environment)]
     (cond
      (= env-property "Development") :dev-appserver
      (= env-property "Production") :production
