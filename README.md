@@ -10,7 +10,7 @@ application.
 - updated some dependencies
 - more `_ah/admin` pages do not work
 
-Otherwise it is the same appengine-magic as it was N years ago, which does not
+Otherwise, it is the same appengine-magic as it was N years ago, which does not
 contain any modern Google Cloud APIs.
 
 #### Installation:
