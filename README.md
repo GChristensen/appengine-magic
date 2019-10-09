@@ -17,8 +17,7 @@ Installation:
 1. Clone the repo.
 2. Execute `lein install` from the repo directory.
 
-The original README:
-----
+## The original README:
 
 The appengine-magic library attempts to abstract away the infrastructural nuts
 and bolts of writing a Clojure application for the Google App Engine platform.
