@@ -30,4 +30,4 @@
                  [com.google.appengine/appengine-testing "1.9.76"]
                  [com.google.appengine/appengine-tools-sdk "1.9.76"]
                  ;; for the Leiningen plugin
-                 [me.raynes/fs "1.4.5"]])
+                 [me.raynes/fs "1.4.6"]])

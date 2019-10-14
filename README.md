@@ -13,7 +13,7 @@ application.
 Otherwise, it is the same appengine-magic as it was N years ago, which does not
 contain any modern Google Cloud APIs.
 
-#### Installation:
+#### Installation to a local Maven repository:
 1. Clone the repo.
 2. Execute `lein install` from the repo directory.
 
